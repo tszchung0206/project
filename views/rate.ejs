@@ -1,0 +1,13 @@
+<html>
+<head>
+    <title>Rate</title>
+</head>
+<body>
+    <form action="/rate" method="post">
+        <input type="hidden" value="<%=id%>" name="id"/>
+	Please input integer(1-10) to rate this restaurant, 10=best 1=poor<br>
+	<input type="text" name="rating" value="6"/>
+	<input type="submit" value="rate"/>
+    </form>
+</body>
+</html>

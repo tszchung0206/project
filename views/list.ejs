@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Restaurants</title>
+</head>
+<body>
+    <p>User : <%=user_name%></p>
+    <p><a href="/logout">logout</a></p>
+    <p>
+        <form action="/list" method="get">
+            <input type="text" name="keyword"/>
+            <select name="criteria">
+                <option value="name">name</option>
+                <option value="borough">borough</option>
+                <option value="cuisine">cuisine</option>
+            </select>
+            <input type="submit" value="search">
+        </form>
+    </p>
+    <p>Showing <%=restaurants.length%> documents (criteria: <%=criteria%>)</p>
+    <p><a href="/insert">new</a></p>
+    <ul>
+        <% for(var i = 0; i < restaurants.length; i++){ %>
+            <li><a href="/details?_id=<%=restaurants[i]._id.toString()%>"><%=restaurants[i].name%></a></li>
+        <% } %>
+    </ul>
+</body>
+</html>
